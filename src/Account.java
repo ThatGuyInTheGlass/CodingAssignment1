@@ -1,21 +1,19 @@
-package com.company;
-import com.thatguyintheglass.IAccount;
+package com.thatguyintheglass;
+//STATE (Constructions)
 
-
-   //STATE
-public class Account implements IAccount {
+public class Account implements com.thatguyintheglass.IAccount {
     protected int accountNumber;
     protected double accountBalance;
     protected double creditLimit;
     protected double withdrawLimit;
 
-    public Accounnt(int accountNumber, double creditLimit, double withdrawLimit) {
+    public Account(int accountNumber, double creditLimit, double withdrawLimit) {
         this.accountNumber = accountNumber;
         this.creditLimit = creditLimit;
         this.withdrawLimit = withdrawLimit;
     }
 
-    //BEHAVIOR
+    //BEHAVIOR (Methods)
 
     @Override
     public void Deposit(double amount) {
@@ -23,10 +21,17 @@ public class Account implements IAccount {
     }
 
     @Override
-    public double Withdraw(double amount){
+    public double Withdraw(double amount) {
         return amount;
     }
 
+    @Override
+    public double GetCurrentBalance() {
+        return this.accountBalance;
+    }
 
     @Override
+       public int GetAccountNumber() {
+        return this.accountNumber;
+    }
 }
